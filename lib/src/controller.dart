@@ -107,7 +107,7 @@ abstract class Controller
     }
   }
 
-  /// _refreshes the [ControlledWidgets] and the [StatefulWidgets] that depends on [FlutterCleanArchitecture.getController] of the [View] associated with the [Controller] if it is still mounted.
+  /// _refreshes the [ControlledWidgets] and the [StatefulWidgets] that depends on [FlutterCleanArchitecture.getController] of the [clean_architecture.View] associated with the [Controller] if it is still mounted.
   @protected
   void refreshUI() {
     if (_isMounted) {
@@ -145,7 +145,7 @@ abstract class Controller
     super.dispose();
   }
 
-  /// Retrieves the [State<StatefulWidget>] associated with the [View]
+  /// Retrieves the [State<StatefulWidget>] associated with the [clean_architecture.View]
   @protected
   State<StatefulWidget> getState() {
     assert(_globalKey.currentState != null,
@@ -158,7 +158,7 @@ abstract class Controller
     return _globalKey.currentState!;
   }
 
-  /// Retrieves the [GlobalKey<State<StatefulWidget>>] associated with the [View]
+  /// Retrieves the [GlobalKey<State<StatefulWidget>>] associated with the [clean_architecture.View]
   @protected
   GlobalKey<State<StatefulWidget>> getStateKey() {
     return _globalKey;
@@ -302,10 +302,10 @@ abstract class Controller
   @visibleForOverriding
   void onReassembled() {}
 
-  /// Called before [View.didChangeDependencies] is called
+  /// Called before [clean_architecture.View.didChangeDependencies] is called
   ///
-  /// Should be used when need to perform some action on [View.didChangeDependencies] life cycle.
-  /// [View.initViewState] should be called before the actions you need to perform. Like [didChangeDependencies], you can safely perform
+  /// Should be used when need to perform some action on [clean_architecture.View.didChangeDependencies] life cycle.
+  /// [clean_architecture.View.initViewState] should be called before the actions you need to perform. Like [didChangeDependencies], you can safely perform
   /// actions that depends on [BuildContext] here.
   ///
   /// ```dart
@@ -317,9 +317,9 @@ abstract class Controller
   @visibleForOverriding
   void onDidChangeDependencies() {}
 
-  /// Called before [View.initState] is called
+  /// Called before [clean_architecture.View.initState] is called
   ///
-  /// Should be used when need to perform some action on [View.initState] life cycle.
+  /// Should be used when need to perform some action on [clean_architecture.View.initState] life cycle.
   ///
   /// ```dart
   ///     class MyController extends Controller {

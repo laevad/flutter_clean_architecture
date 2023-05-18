@@ -2,7 +2,7 @@ import '../../domain/entities/user.dart';
 import '../../domain/repositories/users_repository.dart';
 
 class DataUsersRepository extends UsersRepository {
-  List<User> users;
+  late List<User> users;
   // sigleton
   static final DataUsersRepository _instance = DataUsersRepository._internal();
   DataUsersRepository._internal() {
