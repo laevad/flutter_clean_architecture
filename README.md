@@ -15,7 +15,9 @@ Add this to your package's pubspec.yaml file:
 ```yaml
 
 dependencies:
-  flutter_clean_architecture: ^5.0.4
+  flutter_clean_architecture:
+  git:
+    url: https://github.com/laevad/flutter_clean_architecture.git
 
 ```
 
@@ -34,7 +36,7 @@ Alternatively, your editor might support `flutter packages get`. Check the docs 
 Now in your Dart code, you can use:
 
 ```dart
-import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart' as clean_arch;
 ```
 
 ## Flutter Clean Architecture Primer
