@@ -161,9 +161,11 @@ packages:
   flutter_clean_architecture:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: dd5d073a54de1931fb9c176bbd34cadbd2abeef4
+      url: "https://github.com/laevad/flutter_clean_architecture.git"
+    source: git
     version: "5.0.3"
   flutter_lints:
     dependency: "direct dev"
