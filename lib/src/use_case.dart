@@ -3,9 +3,9 @@ import 'package:rxdart/rxdart.dart';
 import 'package:logging/logging.dart';
 import 'dart:async';
 
-/// The abstract [UseCase] to be implemented by all usecases.
+/// The abstract [UseCase] to be implemented by all use cases.
 /// [T] Is the type to be returned by the [UseCase] to the [Presenter]
-/// [Params] Is the object passed to the usecase containing all the needed parameters
+/// [Params] Is the object passed to the use case containing all the needed parameters
 /// for the [UseCase]
 ///
 /// The [UseCase] represents a business-level process. It should be written purely
@@ -45,7 +45,7 @@ import 'dart:async';
 ///         // get users
 ///         List<User> users = await _usersRepository.getAllUsers();
 ///         // Adding it triggers the .onNext() in the `Observer`
-///         // It is usually better to wrap the reponse inside a respose object.
+///         // It is usually better to wrap the response inside a response object.
 ///         controller.add(users);
 ///         logger.finest('GetUsersUseCase successful.');
 ///         controller.close();
@@ -108,10 +108,10 @@ abstract class UseCase<T, Params> {
   }
 
   /// Builds the [Stream] to be subscribed to. [Params] is required
-  /// by the [UseCase] to retrieve the appropraite data from the repository
+  /// by the [UseCase] to retrieve the appropriate data from the repository
   Future<Stream<T?>> buildUseCaseStream(Params? params);
 
-  /// Subscribes to the [Observerable] with the [Observer] callback functions.
+  /// Subscribes to the [observable] with the [Observer] callback functions.
   void execute(Observer<T> observer, [Params? params]) async {
     final StreamSubscription subscription = (await buildUseCaseStream(params))
         .listen(observer.onNext,

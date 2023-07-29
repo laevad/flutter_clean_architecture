@@ -1,4 +1,4 @@
-import '../../../domain/usecases/get_user_usecase.dart';
+import '../../../domain/use_cases/get_user_use_case.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 class HomePresenter extends Presenter {
@@ -10,7 +10,7 @@ class HomePresenter extends Presenter {
   HomePresenter(usersRepo) : getUserUseCase = GetUserUseCase(usersRepo);
 
   void getUser(String uid) {
-    // execute getUseruserCase
+    // execute getUserUseCase
     getUserUseCase.execute(
         _GetUserUseCaseObserver(this), GetUserUseCaseParams(uid));
   }

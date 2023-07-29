@@ -6,25 +6,42 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     FlutterCleanArchitecture.debugModeOn();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: createMaterialColor(const Color(0xFF2196F3)),
+          accentColor: const Color(0xFFFF9800),
+          backgroundColor: const Color(0xFFF5F5F5),
+          errorColor: const Color(0xFFFF0000),
+          brightness: Brightness.light,
+          cardColor: const Color(0xFFFFFFFF),
+          primaryColorDark: const Color(0xFF1976D2),
+        ),
+        useMaterial3: true,
       ),
-      home: const HomePage(title: 'Flutter Clean Demo Page'),
+      home: const HomePage(title: 'Flutter Clean Architecture Demo'),
     );
   }
 }
+
+// For MaterialColor, since it doesn't have a constructor that takes a Color
+MaterialColor createMaterialColor(Color color) {
+  List<int> strengths = <int>[50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+  Map<int, Color> swatch = <int, Color>{};
+  final int primary = color.value;
+  for (int i = 0; i < 10; i++) {
+    final int strength = strengths[i];
+    final double opacity = i == 0 ? 0.05 : i / 10.0;
+    final Color swatchColor = Color(primary).withOpacity(opacity);
+    swatch[strength] = swatchColor;
+  }
+  return MaterialColor(color.value, swatch);
+}
+
+const String userCollection = "users";
+const String chatCollection = "chats";
+const String messageCollection = "messages";

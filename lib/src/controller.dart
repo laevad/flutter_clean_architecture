@@ -80,7 +80,6 @@ abstract class Controller
   late Logger logger;
   late GlobalKey<State<StatefulWidget>> _globalKey;
 
-  @mustCallSuper
   Controller() {
     logger = Logger('$runtimeType');
     _isMounted = true;

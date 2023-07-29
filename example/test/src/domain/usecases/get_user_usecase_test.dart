@@ -1,4 +1,4 @@
-import 'package:example/src/domain/usecases/get_user_usecase.dart';
+import 'package:example/src/domain/use_cases/get_user_use_case.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:example/src/domain/repositories/users_repository.dart';
@@ -7,7 +7,7 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 void main() {
   test(
-      'Given getUserUseCase when Parameters user UUID does exist return successfull',
+      'Given getUserUseCase when Parameters user UUID does exist return successful',
       () async {
     GetUserUseCase getUserUseCase;
     _Observer observer;
@@ -20,7 +20,7 @@ void main() {
     expect(observer.status['result'], 'success');
   });
   test(
-      'Given getUserUseCase when getUser and user UUID does exist return the namd and the age',
+      'Given getUserUseCase when getUser and user UUID does exist return the name and the age',
       () async {
     GetUserUseCase getUserUseCase;
     getUserUseCase = GetUserUseCase(MockGetUser());

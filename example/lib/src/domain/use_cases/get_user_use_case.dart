@@ -17,7 +17,7 @@ class GetUserUseCase
       // get user
       final user = await usersRepository.getUser(params!.uid);
       // Adding it triggers the .onNext() in the `Observer`
-      // It is usually better to wrap the reponse inside a respose object.
+      // It is usually better to wrap the response inside a response object.
       controller.add(GetUserUseCaseResponse(user));
       logger.finest('GetUserUseCase successful.');
       controller.close();

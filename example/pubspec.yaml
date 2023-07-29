@@ -16,7 +16,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
   flutter:
@@ -26,8 +26,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_clean_architecture:
-    git:
-      url: https://github.com/laevad/flutter_clean_architecture.git
+    path: ../
   mockito: ^5.3.2
 dev_dependencies:
   flutter_test:

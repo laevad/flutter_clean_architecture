@@ -7,7 +7,7 @@ import 'package:example/src/app/widgets/button.dart';
 import 'package:example/src/device/repositories/gps_device.dart';
 import 'package:example/src/data/repositories/data_users_repository.dart';
 import 'package:example/src/domain/repositories/users_repository.dart';
-import 'package:example/src/domain/usecases/get_user_usecase.dart';
+import 'package:example/src/domain/use_cases/get_user_use_case.dart';
 import 'package:example/src/domain/entities/user.dart';
 
 void main() {}

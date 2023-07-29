@@ -30,7 +30,7 @@ class BackgroundUseCaseParams<T> {
 /// should not be performed on the main isolate.
 ///
 /// The code that is to be run on a different isolate can be provided through a
-/// static method of the usecase. Then, a reference of that method should be returned
+/// static method of the use case. Then, a reference of that method should be returned
 /// by overriding the [buildUseCaseTask] as shown below. Input data for the isolate
 /// is provided by inside the `params` variable in [BackgroundUseCaseParams], which is
 /// passed to the static method of type [UseCaseTask].
@@ -42,15 +42,15 @@ class BackgroundUseCaseParams<T> {
 ///
 /// In addition, a `done` flag can be set to indicate that the isolate has completed its task.
 ///
-/// An example would be a usecase that performs matrix multiplication.
+/// An example would be a use case that performs matrix multiplication.
 /// ```dart
 /// class MatMulUseCase extends BackgroundUseCase<List<List<double>>, MatMulUseCaseParams> {
 ///  @override
 ///  buildUseCaseTask() {
-///    return matmul;
+///    return matMul;
 ///  }
 ///
-///  static void matmul(BackgroundUseCaseParams params) async {
+///  static void matMul(BackgroundUseCaseParams params) async {
 ///    MatMulUseCaseParams matMulParams = params.params as MatMulUseCaseParams;
 ///    List<List<double>> result = List<List<double>>.generate(
 ///        10, (i) => List<double>.generate(10, (j) => 0));
@@ -105,7 +105,7 @@ abstract class BackgroundUseCase<T, Params> extends UseCase<T, Params> {
   BackgroundUseCaseState get state => _state;
   bool get isRunning => _state != BackgroundUseCaseState.idle;
 
-  /// Executes the usecase on a different isolate. Spawns [_isolate]
+  /// Executes the use_case on a different isolate. Spawns [_isolate]
   /// using the static method provided by [buildUseCaseTask] and listens
   /// to a [BehaviorSubject] using the [observer] provided by the user.
   /// All [Params] are sent to the [_isolate] through [BackgroundUseCaseParams].

@@ -1,5 +1,5 @@
 /// A [Presenter] prepares data for the [Controller], listens to [UseCase], and
-/// handles its creation and distruction. A [Presenter] should be aggregated inside
+/// handles its creation and destruction. A [Presenter] should be aggregated inside
 /// a [Controller]. Its dependencies are also provided by the [Controller]. Once the
 /// [Controller] is disposed, it should also call [dispose()] of the [Presenter] in order
 /// to dispose of the [UseCase]. The [Presenter] utilizes an [Observer] to listen to the
@@ -43,7 +43,7 @@
 ///       // in this case, unnecessary
 ///       void onNext(_) {}
 ///
-///       /// Login is successfull, trigger event in [LoginController]
+///       /// Login is successful, trigger event in [LoginController]
 ///       void onComplete() {
 ///         // any cleaning or preparation goes here
 ///         assert(loginPresenter.loginOnComplete != null);

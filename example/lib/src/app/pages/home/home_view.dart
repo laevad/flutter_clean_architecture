@@ -1,6 +1,7 @@
 import './home_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/flutter_clean_architecture.dart' as clean_architecture;
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart'
+    as clean_architecture;
 import '../../../data/repositories/data_users_repository.dart';
 
 class HomePage extends clean_architecture.View {
@@ -14,7 +15,8 @@ class HomePage extends clean_architecture.View {
       HomePageState();
 }
 
-class HomePageState extends clean_architecture.ViewState<HomePage, HomeController> {
+class HomePageState
+    extends clean_architecture.ViewState<HomePage, HomeController> {
   HomePageState() : super(HomeController(DataUsersRepository()));
 
   @override
@@ -44,7 +46,7 @@ class HomePageState extends clean_architecture.ViewState<HomePage, HomeControlle
                 builder: (context, controller) {
                   return Text(
                     controller.user == null ? '' : '${controller.user}',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   );
                 },
               ),
@@ -52,9 +54,11 @@ class HomePageState extends clean_architecture.ViewState<HomePage, HomeControlle
                 builder: (context, controller) {
                   return ElevatedButton(
                     onPressed: controller.getUser,
-                    child: const Text(
+                    child: Text(
                       'Get User',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                      ),
                     ),
                   );
                 },
@@ -62,10 +66,12 @@ class HomePageState extends clean_architecture.ViewState<HomePage, HomeControlle
               clean_architecture.ControlledWidgetBuilder<HomeController>(
                 builder: (context, controller) {
                   return ElevatedButton(
-                    onPressed: controller.getUserwithError,
+                    onPressed: controller.getUserWithError,
                     child: const Text(
                       'Get User Error',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
                     ),
                   );
                 },
@@ -74,7 +80,8 @@ class HomePageState extends clean_architecture.ViewState<HomePage, HomeControlle
           ),
         ),
       ),
-      floatingActionButton: clean_architecture.ControlledWidgetBuilder<HomeController>(
+      floatingActionButton:
+          clean_architecture.ControlledWidgetBuilder<HomeController>(
         builder: (context, controller) {
           return FloatingActionButton(
             onPressed: () => controller.buttonPressed(),

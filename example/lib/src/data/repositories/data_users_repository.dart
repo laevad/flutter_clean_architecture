@@ -3,7 +3,7 @@ import '../../domain/repositories/users_repository.dart';
 
 class DataUsersRepository extends UsersRepository {
   late List<User> users;
-  // sigleton
+  // Singleton
   static final DataUsersRepository _instance = DataUsersRepository._internal();
   DataUsersRepository._internal() {
     users = <User>[];

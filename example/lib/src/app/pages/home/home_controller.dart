@@ -5,7 +5,7 @@ import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 class HomeController extends Controller {
   int _counter;
-   User? _user;
+  User? _user;
   int get counter => _counter;
   User? get user => _user; // data used by the View
   final HomePresenter homePresenter;
@@ -30,15 +30,15 @@ class HomeController extends Controller {
     // On error, show a snackbar, remove the user, and refresh the UI
     homePresenter.getUserOnError = (e) {
       print('Could not retrieve user.');
-      ScaffoldMessenger.of(getContext())
-          .showSnackBar(SnackBar(content: Text(e.message)));
-      _user =  null;
+      ScaffoldMessenger.of(getContext()).showSnackBar(
+          SnackBar(backgroundColor: Colors.red, content: Text(e.message)));
+      _user = null;
       refreshUI(); // Refreshes the UI manually
     };
   }
 
   void getUser() => homePresenter.getUser('test-uid');
-  void getUserwithError() => homePresenter.getUser('test-uid231243');
+  void getUserWithError() => homePresenter.getUser('test-uid231243');
 
   void buttonPressed() {
     _counter++;

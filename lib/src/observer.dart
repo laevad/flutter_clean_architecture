@@ -16,7 +16,7 @@
 ///       // in this case, unnecessary
 ///       void onNext(_) {}
 ///
-///       /// Login is successfull, trigger event in [LoginController]
+///       /// Login is successful, trigger event in [LoginController]
 ///       void onComplete() {
 ///         // any cleaning or preparation goes here
 ///         assert(loginPresenter.loginOnComplete != null);
@@ -52,7 +52,7 @@
 ///         usersPresenter.getUsersOnNext(users);
 ///       }
 ///
-///       /// Login is successfull, trigger event in [LoginController]
+///       /// Login is successful, trigger event in [LoginController]
 ///       void onComplete() {
 ///         // any cleaning or preparation goes here
 ///         assert(usersPresenter.getUsersOnComplete != null);
