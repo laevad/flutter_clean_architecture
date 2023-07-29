@@ -336,9 +336,9 @@ typedef ControlledBuilder<Con extends Controller> = Widget Function(
 /// This is a representation of a widget that is controlled by a [Controller] and needs to be re-rendered when
 /// [Controller.refreshUI] is triggered.
 ///
-/// This was created to optimize the render cycle from a [ViewState]'s widget tree.
+/// This was created to optimize the render cycle from a [CleanViewState]'s widget tree.
 ///
-/// When [Controller.refreshUI] is called, only the ControlledWidgets inside [ViewState.view] will be re-rendered.
+/// When [Controller.refreshUI] is called, only the ControlledWidgets inside [CleanViewState.view] will be re-rendered.
 ///
 /// Example:
 ///

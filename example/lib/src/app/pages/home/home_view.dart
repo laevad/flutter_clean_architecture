@@ -1,10 +1,9 @@
 import './home_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/flutter_clean_architecture.dart'
-    as clean_architecture;
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import '../../../data/repositories/data_users_repository.dart';
 
-class HomePage extends clean_architecture.View {
+class HomePage extends CleanView {
   const HomePage({Key? key, required this.title}) : super();
 
   final String title;
@@ -15,8 +14,7 @@ class HomePage extends clean_architecture.View {
       HomePageState();
 }
 
-class HomePageState
-    extends clean_architecture.ViewState<HomePage, HomeController> {
+class HomePageState extends CleanViewState<HomePage, HomeController> {
   HomePageState() : super(HomeController(DataUsersRepository()));
 
   @override
@@ -32,7 +30,7 @@ class HomePageState
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              clean_architecture.ControlledWidgetBuilder<HomeController>(
+              ControlledWidgetBuilder<HomeController>(
                 builder: (context, controller) {
                   return Text(
                     'Button pressed ${controller.counter} times.',
@@ -42,7 +40,7 @@ class HomePageState
               const Text(
                 'The current user is',
               ),
-              clean_architecture.ControlledWidgetBuilder<HomeController>(
+              ControlledWidgetBuilder<HomeController>(
                 builder: (context, controller) {
                   return Text(
                     controller.user == null ? '' : '${controller.user}',
@@ -50,7 +48,7 @@ class HomePageState
                   );
                 },
               ),
-              clean_architecture.ControlledWidgetBuilder<HomeController>(
+              ControlledWidgetBuilder<HomeController>(
                 builder: (context, controller) {
                   return ElevatedButton(
                     onPressed: controller.getUser,
@@ -63,7 +61,7 @@ class HomePageState
                   );
                 },
               ),
-              clean_architecture.ControlledWidgetBuilder<HomeController>(
+              ControlledWidgetBuilder<HomeController>(
                 builder: (context, controller) {
                   return ElevatedButton(
                     onPressed: controller.getUserWithError,
@@ -80,8 +78,7 @@ class HomePageState
           ),
         ),
       ),
-      floatingActionButton:
-          clean_architecture.ControlledWidgetBuilder<HomeController>(
+      floatingActionButton: ControlledWidgetBuilder<HomeController>(
         builder: (context, controller) {
           return FloatingActionButton(
             onPressed: () => controller.buttonPressed(),
