@@ -1,4 +1,4 @@
-import 'package:example/src/domain/use_cases/get_user_use_case.dart';
+import 'package:example/src/domain/usecases/get_user_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:example/src/domain/repositories/users_repository.dart';

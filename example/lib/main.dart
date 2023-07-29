@@ -41,7 +41,3 @@ MaterialColor createMaterialColor(Color color) {
   }
   return MaterialColor(color.value, swatch);
 }
-
-const String userCollection = "users";
-const String chatCollection = "chats";
-const String messageCollection = "messages";

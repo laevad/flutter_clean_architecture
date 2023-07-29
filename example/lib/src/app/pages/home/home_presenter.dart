@@ -1,4 +1,4 @@
-import '../../../domain/use_cases/get_user_use_case.dart';
+import '../../../domain/usecases/get_user_usecase.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 class HomePresenter extends Presenter {

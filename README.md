@@ -36,7 +36,7 @@ Alternatively, your editor might support `flutter packages get`. Check the docs 
 Now in your Dart code, you can use:
 
 ```dart
-import 'package:flutter_clean_architecture/flutter_clean_architecture.dart' as clean_arch;
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 ```
 
 ## Flutter Clean Architecture Primer
