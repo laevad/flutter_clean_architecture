@@ -164,7 +164,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "5.0.3-dev.1"
+    version: "5.0.4-dev.0"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -286,18 +286,18 @@ packages:
     dependency: transitive
     description:
       name: responsive_builder
-      sha256: f01bc341c73b6db7bd6319e22d2c160f28f924399ae46e6699ecc8160ba2765c
+      sha256: a38ba9ba86c9daf08904674553034b651377b1d685d10ee450d8350ae51f76ec
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.3"
+    version: "0.7.0"
   rxdart:
     dependency: transitive
     description:
       name: rxdart
-      sha256: "2ef8b4e91cb3b55d155e0e34eeae0ac7107974e451495c955ac04ddee8cc21fd"
+      sha256: "0c7c0cedd93788d996e33041ffecda924cc54389199cde4e6a34b440f50044cb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.26.0"
+    version: "0.27.7"
   sky_engine:
     dependency: transitive
     description: flutter

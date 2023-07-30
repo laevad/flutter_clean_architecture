@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(title: 'Flutter Clean Architecture Demo'),
+      home: const HomePage(
+        title: 'Flutter Clean Architecture Demo',
+        key: Key('homePage'),
+      ),
     );
   }
 }

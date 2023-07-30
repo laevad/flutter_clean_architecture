@@ -4,12 +4,16 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets(
-      'Given Add Button when click then increment counter and display Button pressed 1 times. text',
-      (tester) async {
+      'Given Add Button when click then increment counter and display Button '
+      'pressed 1 times. text', (tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: HomePage(key: Key('homePage'), title: 'Flutter Demo Home Page'),
+      home: HomePage(
+        key: Key('homePage'),
+        title: 'Flutter Clean Architecture Demo',
+      ),
     ));
-    expect(find.byKey(const Key('homePage')), findsOneWidget);
+    expect(
+        find.byWidgetPredicate((widget) => widget is HomePage), findsOneWidget);
     await tester.tap(find.widgetWithIcon(FloatingActionButton, Icons.add));
     await tester.pumpAndSettle();
     var counterFinder = find.text('Button pressed 1 times.');
@@ -20,9 +24,13 @@ void main() {
       'Given Get User Button when click then display John Smith, 18 text',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: HomePage(key: Key('homePage'), title: 'Flutter Demo Home Page'),
+      home: HomePage(
+        key: Key('HomePage'),
+        title: 'Flutter Clean Architecture Demo',
+      ),
     ));
-    expect(find.byKey(const Key('homePage')), findsOneWidget);
+    expect(
+        find.byWidgetPredicate((widget) => widget is HomePage), findsOneWidget);
     await tester.tap(find.widgetWithText(ElevatedButton, 'Get User'));
     await tester.pump();
     var counterFinder = find.text('John Smith, 18');
@@ -33,9 +41,13 @@ void main() {
       'Given Get User Button when click then display John Smith, 18 text',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: HomePage(key: Key('homePage'), title: 'Flutter Demo Home Page'),
+      home: HomePage(
+        key: Key('HomePage'),
+        title: 'Flutter Clean Architecture Demo',
+      ),
     ));
-    expect(find.byKey(const Key('homePage')), findsOneWidget);
+    expect(
+        find.byWidgetPredicate((widget) => widget is HomePage), findsOneWidget);
     await tester.tap(find.widgetWithText(ElevatedButton, 'Get User Error'));
     await tester.pump();
     var counterFinder = find.text('No element');
@@ -44,15 +56,16 @@ void main() {
 
   testWidgets('Trigger Reassemble', (tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: HomePage(key: Key('homePage'), title: 'Flutter Demo Home Page'),
+      home: HomePage(key: Key('HomePage'), title: 'Flutter Demo Home Page'),
     ));
 
     tester.binding.reassembleApplication();
     tester.idle();
   });
+
   testWidgets('Trigger Resumed', (tester) async {
     await tester.pumpWidget(const MaterialApp(
-      home: HomePage(key: Key('homePage'), title: 'Flutter Demo Home Page'),
+      home: HomePage(key: Key('HomePage'), title: 'Flutter Demo Home Page'),
     ));
 
     tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
