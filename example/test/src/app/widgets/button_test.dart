@@ -2,12 +2,12 @@ import 'package:example/src/app/pages/home/home_controller.dart';
 import 'package:example/src/app/widgets/button.dart';
 import 'package:example/src/data/repositories/data_users_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/flutter_clean_architecture.dart' as clean_architecture;
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets(
-      'Given stateless button when homepagebutton is added to parent widget then return homepagebutton',
+      'Given stateless button when homepage button is added to parent widget then return homepage button',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
@@ -25,7 +25,7 @@ void main() {
   });
 }
 
-class TestPage extends clean_architecture.CleanView {
+class TestPage extends CleanView {
   const TestPage({
     Key? key,
   }) : super(key: key);
@@ -34,7 +34,7 @@ class TestPage extends clean_architecture.CleanView {
   TestPageState createState() => TestPageState();
 }
 
-class TestPageState extends clean_architecture.CleanViewState<TestPage, HomeController> {
+class TestPageState extends CleanViewState<TestPage, HomeController> {
   TestPageState() : super(HomeController(DataUsersRepository()));
 
   @override
