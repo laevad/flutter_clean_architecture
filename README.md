@@ -18,7 +18,7 @@ dependencies:
   flutter_clean_architecture:
   git:
     url: https://github.com/laevad/flutter_clean_architecture.git
-    tag: 5.0.4-dev.0
+    tag: 5.0.4-dev.1
 
 ```
 
