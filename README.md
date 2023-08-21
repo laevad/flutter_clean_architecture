@@ -16,9 +16,9 @@ Add this to your package's pubspec.yaml file:
 
 dependencies:
   flutter_clean_architecture:
-  git:
-    url: https://github.com/laevad/flutter_clean_architecture.git
-    tag: 5.0.4-dev.1
+    git:
+      url: https://github.com/laevad/flutter_clean_architecture.git
+      tag: 5.0.4-dev.1
 
 ```
 
