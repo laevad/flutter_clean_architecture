@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
           errorColor: const Color(0xFFFF0000),
           brightness: Brightness.light,
           cardColor: const Color(0xFFFFFFFF),
-          primaryColorDark: const Color(0xFF1976D2),
         ),
         useMaterial3: true,
       ),

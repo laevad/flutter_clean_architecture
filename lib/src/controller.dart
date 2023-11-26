@@ -102,6 +102,9 @@ abstract class Controller
         case AppLifecycleState.detached:
           onDetached();
           break;
+        case AppLifecycleState.hidden:
+          // TODO: Handle this case.
+          break;
       }
     }
   }
