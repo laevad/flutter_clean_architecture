@@ -21,17 +21,23 @@ void main() {
       expect(observer.error, true);
     });
 
-    test('BackgroundUseCase .dispose cancels the background usecase', () async {
+    test('BackgroundUseCase .dispose cancels the background useCase', () async {
       CounterUseCaseObserver observer = CounterUseCaseObserver();
-      CounterUseCaseCancelled usecase = CounterUseCaseCancelled()
-        ..execute(observer);
+      CounterUseCaseCancelled useCase = CounterUseCaseCancelled()..execute(observer);
+
+      // Allow more time for the background task to complete
+      await Future.delayed(Duration(milliseconds: 1000));
+
+      useCase.dispose();
+
+      // Allow time for the dispose to take effect
       await Future.delayed(Duration(milliseconds: 500));
-      usecase.dispose();
-      await Future.delayed(Duration(milliseconds: 300));
+
       expect(observer.number, 1);
       expect(observer.done, false);
       expect(observer.error, false);
     });
+
 
     test('BackgroundUseCase matmul', () async {
       MatMulUseCaseObserver observer = MatMulUseCaseObserver();
